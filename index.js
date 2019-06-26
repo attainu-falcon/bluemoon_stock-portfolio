@@ -22,7 +22,13 @@ else {
        res.sendfile('public/home.html')
 });
 app.get('/mywatchlist.html', function(req, res) {
-    res.sendfile('public/mywatchlist.html')
+    if(req.session.login === true) {
+        res.sendfile('./public/mywatchlist.html');
+}
+else {
+    res.send("To access your watchlist, you have to login first!" + "<a href='/login.html'>login</a>")
+}
+    
 });
 app.get('/marketnews.html', function(req, res) {
     res.sendfile('public/marketnews.html')
