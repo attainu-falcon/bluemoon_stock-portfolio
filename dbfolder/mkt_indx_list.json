@@ -1,0 +1,18 @@
+[
+  {
+    "indx": "BSE Sensex",
+    "symbol": "^SENSEX"
+  },
+  {
+    "indx": "NIFTY50",
+    "symbol": "NIFTY.NS"
+  },
+  {
+    "indx": "NIFTY100",
+    "symbol": "CNX100.NS"
+  },
+  {
+    "indx": "NIFTY500",
+    "symbol": "CNX500.NS"
+  }
+]
