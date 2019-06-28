@@ -1,0 +1,21 @@
+[
+  {"indx": "DOW JONES",
+    "symbol": "^DJI"
+  },
+  {
+    "indx": "NASDAQ",
+    "symbol": "^IXIC"
+  },
+  {
+    "indx": "NIKKEI225",
+    "symbol": "^NI225"
+  },
+  {
+    "indx":  "HANG SENG",
+    "symbol": "^HSI"
+  },
+  {
+    "indx": "DAX",
+    "symbol": "^DAX"
+  }
+]

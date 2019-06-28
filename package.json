@@ -2,15 +2,16 @@
   "name": "bluemoon_stock-portfolio",
   "version": "1.0.0",
   "description": "bluemoon_stock-portfolio",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/attainu-falcon/bluemoon_stock-portfolio.git"
   },
-  "author": "Sourav Mandal",
+  "author": "Sourav Mandal, Sirisha Battula, Mrinal Roy",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/attainu-falcon/bluemoon_stock-portfolio/issues"
@@ -19,6 +20,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
     "express-session": "^1.16.2"
   }
 }
