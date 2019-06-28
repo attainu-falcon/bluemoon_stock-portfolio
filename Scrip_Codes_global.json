@@ -1,0 +1,402 @@
+[
+    {
+      "symb": "INFY",
+      "company": " INFOSYS"
+    },
+    {
+      "symb": "TTM",
+      "company": " TATA MOTORS"
+    },
+    {
+      "symb": "ABB",
+      "company": " ASEA BROWN BOVERI"
+    },
+    {
+      "symb": "MSFT",
+      "company": " MICROSOFT CORPORATION"
+    },
+    {
+      "symb": "GE",
+      "company": " GENERAL ELECTRIC COMPANY"
+    },
+    {
+      "symb": "XGM",
+      "company": " GENERAL MOTORS"
+    },
+    {
+      "symb": "SI",
+      "company": " SIEMENS"
+    },
+    {
+      "symb": "AAPL",
+      "company": " APPLE INC"
+    },
+    {
+      "symb": "FB",
+      "company": " FACEBOOK"
+    },
+    {
+      "symb": "TWTR",
+      "company": " TWITTER"
+    },
+    {
+      "symb": "BABA",
+      "company": " ALIBABA HOLDINGS"
+    },
+    {
+      "symb": "BAC",
+      "company": " BANK OF AMERICA"
+    },
+    {
+      "symb": "F",
+      "company": " FORD MOTOR COMPANY"
+    },
+    {
+      "symb": "PFE",
+      "company": " PFIZER"
+    },
+    {
+      "symb": "WFC",
+      "company": " WELLS FARGO"
+    },
+    {
+      "symb": "JPM",
+      "company": " JP MORGAN CHASE"
+    },
+    {
+      "symb": "AVP",
+      "company": " AVON PRODUCTS"
+    },
+    {
+      "symb": "BK",
+      "company": " BANK OF NEW YORK"
+    },
+    {
+      "symb": "HAL",
+      "company": " HALLIBURTON"
+    },
+    {
+      "symb": "CLF",
+      "company": " CLEVELAND CLIFFS"
+    },
+    {
+      "symb": "KO",
+      "company": " COCA COLA"
+    },
+    {
+      "symb": "MRK",
+      "company": " MERCK"
+    },
+    {
+      "symb": "CRM",
+      "company": " SALEFORCE"
+    },
+    {
+      "symb": "MS",
+      "company": " MORGAN STANLEY"
+    },
+    {
+      "symb": "DIS",
+      "company": " WALT DISNEY"
+    },
+    {
+      "symb": "JNJ",
+      "company": " JOHNSON & JOHNSON"
+    },
+    {
+      "symb": "BSX",
+      "company": " BOSTON SCIENTIFIC"
+    },
+    {
+      "symb": "PG",
+      "company": " PROCTER & GAMBLE"
+    },
+    {
+      "symb": "KEY",
+      "company": " KEYCORP"
+    },
+    {
+      "symb": "XOM",
+      "company": " EXXON MOBIL"
+    },
+    {
+      "symb": "NOK",
+      "company": " NOKIA"
+    },
+    {
+      "symb": "DOW",
+      "company": " DOW CHEMICAL"
+    },
+    {
+      "symb": "RDY",
+      "company": " DR REDDYS LAB"
+    },
+    {
+      "symb": "DRC",
+      "company": " DRESSER RAND"
+    },
+    {
+      "symb": "DPZ",
+      "company": " DOMINOS PIZZA"
+    },
+    {
+      "symb": "DB",
+      "company": " DEUTSCHE BANK"
+    },
+    {
+      "symb": "DAL",
+      "company": " DELTA AIR LINES"
+    },
+    {
+      "symb": "DLM",
+      "company": " DEL MONTE"
+    },
+    {
+      "symb": "CSCO",
+      "company": " CISCO SYSTEMS"
+    },
+    {
+      "symb": "INTC",
+      "company": " INTEL"
+    },
+    {
+      "symb": "NVDA",
+      "company": " NVIDIA"
+    },
+    {
+      "symb": "FLEX",
+      "company": " FLEXTRONICS"
+    },
+    {
+      "symb": "NFLX",
+      "company": " NETFLIX"
+    },
+    {
+      "symb": "SBUX",
+      "company": " STARBUCKS"
+    },
+    {
+      "symb": "BIDU",
+      "company": " BAIDU"
+    },
+    {
+      "symb": "MMYT",
+      "company": " MAKEMYTRIP"
+    },
+    {
+      "symb": "SIFY",
+      "company": " SIFY TECHNOLOGIES"
+    },
+    {
+      "symb": "HRBN",
+      "company": " HARBIN ELECTRIC"
+    },
+    {
+      "symb": "WNS",
+      "company": " WNS LTD"
+    },
+    {
+      "symb": "WBMD",
+      "company": " WEBMD HEALTH"
+    },
+    {
+      "symb": "MLHR",
+      "company": " HERMAN MILLER"
+    },
+    {
+      "symb": "AAL",
+      "company": " AMERICAN AIRLINES"
+    },
+    {
+      "symb": "AZRE",
+      "company": " AZURE POWER GLOBAL LTD"
+    },
+    {
+      "symb": "IBN",
+      "company": " ICICI BANK LTD"
+    },
+    {
+      "symb": "HDB",
+      "company": " HDFC BANK LTD"
+    },
+    {
+      "symb": "YTRA",
+      "company": " YATRA ONLINE"
+    },
+    {
+      "symb": "VEDL",
+      "company": " VEDANTA"
+    },
+    {
+      "symb": "WIT",
+      "company": " WIPRO"
+    },
+    {
+      "symb": "VDTH",
+      "company": "VIDEOCON D2H"
+    },
+    {
+      "symb": "GOOG",
+      "company": " ALPHABET GOOGLE"
+    },
+    {
+      "symb": "AMZN",
+      "company": " AMAZON"
+    },
+    {
+      "symb": "BRK-A",
+      "company": " BERKSHIRE HATHWAY"
+    },
+    {
+      "symb": "WMT",
+      "company": " WALMART"
+    },
+    {
+      "symb": "RDS-A",
+      "company": " ROYAL DUTCH SHELL"
+    },
+    {
+      "symb": "V",
+      "company": " VISA INC"
+    },
+    {
+      "symb": "BUD",
+      "company": " ANHEYSER-BUSCH INBEV"
+    },
+    {
+      "symb": "T",
+      "company": " AT&T"
+    },
+    {
+      "symb": "CVX",
+      "company": " CHEVRON CORPORATION"
+    },
+    {
+      "symb": "UNH",
+      "company": " UNITEDHEALTH GROUP"
+    },
+    {
+      "symb": "PFE",
+      "company": " PFIZER"
+    },
+    {
+      "symb": "CHL",
+      "company": " CHINA MOBILE LTD"
+    },
+    {
+      "symb": "HD",
+      "company": " HOME DEPOT"
+    },
+    {
+      "symb": "TSM",
+      "company": " TAIWAN SEMICONDUCTOR MFG CO"
+    },
+    {
+      "symb": "VZ",
+      "company": " VERIZON COMMUNICATIONS"
+    },
+    {
+      "symb": "ORCL",
+      "company": " ORACLE COMMUNICATIONS"
+    },
+    {
+      "symb": "C",
+      "company": " CITIGROUP"
+    },
+    {
+      "symb": "NVS",
+      "company": " NOVARTIS"
+    },
+    {
+      "symb": "QCOM",
+      "company": " QUALCOMM INCORPORATED"
+    },
+    {
+      "symb": "MRVL",
+      "company": " MARVELL"
+    },
+    {
+      "symb": "PBCT",
+      "company": " PEOPLES BANL"
+    },
+    {
+      "symb": "ACAD",
+      "company": " ACADIA PHARMACEUTICALS INC"
+    },
+    {
+      "symb": "ACB",
+      "company": " AURORA CANNABIS INC"
+    },
+    {
+      "symb": "ABP",
+      "company": " ABPRO CORPORATION"
+    },
+    {
+      "symb": "ACST",
+      "company": " ACASTI PHARMA INC"
+    },
+    {
+      "symb": "ADBE",
+      "company": " ADOBE INC"
+    },
+    {
+      "symb": "AFG",
+      "company": " AMERICAN FINANCIAL GROUP INC OHIO"
+    },
+    {
+      "symb": "AFT",
+      "company": " APOLLO SENIOR FLOATING RATE FD INC"
+    },
+    {
+      "symb": "WYY",
+      "company": " WIDEPOINT CORP"
+    },
+    {
+      "symb": "WVE",
+      "company": " WAVE LIFE SCIENCES LTD"
+    },
+    {
+      "symb": "X",
+      "company": " UNITED STATES STEEL CORP"
+    },
+    {
+      "symb": "XFOR",
+      "company": "X4 PHARMACEUTICALS INC"
+    },
+    {
+      "symb": "XYL",
+      "company": " XYLEM INC"
+    },
+    {
+      "symb": "AINV",
+      "company": " APOLLO INVESTMENT CORP"
+    },
+    {
+      "symb": "AIF",
+      "company": " APOLLO TACTICAL INCOME FD INC"
+    },
+    {
+      "symb": "AGM",
+      "company": " FEDERAL AGRICULTURAL MORTGAGE CORP"
+    },
+    {
+      "symb": "ABT",
+      "company": " ABBOTT LABORATORIES"
+    },
+    {
+      "symb": "GD",
+      "company": " GENERAL DYNAMICS"
+    },
+    {
+      "symb": "MA",
+      "company": " MASTERCARD INC"
+    },
+    {
+      "symb": "BA",
+      "company": " BOEING COMPANY"
+    },
+    {
+      "symb": "PTR",
+      "company": " PETROCHINA COMPANY"
+    }
+   ]
