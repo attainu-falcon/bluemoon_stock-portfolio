@@ -28,6 +28,16 @@ app.get('/login', (req, res) => {
     cssStyle: '.card0{height:100vh}'
   });
 });
+<<<<<<< HEAD
+app.get('/mywatchlist.html', function(req, res) {
+    if(req.session.login === true) {
+        res.sendfile('./public/mywatchlist.html');
+}
+else {
+    res.send("To access your watchlist, you have to login first!" + "<a href='/login.html'>login</a>")
+}
+    
+=======
 
 // Authentication Route to verify user login credentials
 app.post('/auth', (req, res) => {
@@ -36,6 +46,7 @@ app.post('/auth', (req, res) => {
       req.session.loggedIn = true; }
     }
     res.redirect('/user');
+>>>>>>> 41062bc41fe23a696d40272863bb85072f8c01e7
 });
 
 
