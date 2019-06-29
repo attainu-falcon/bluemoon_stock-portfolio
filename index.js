@@ -6,27 +6,40 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const userlist = require('./dbfolder/userlist.json');
 const path = require('path');
-const hbs = require('express-handlebars');
 PORT = process.env.PORT||8080;
+const scriptPath = path.join(__dirname, '/scripts');
+const cssPath = path.join(__dirname, '/stylesheets');
+const htmlPath = path.join(__dirname, '/userfiles');
+const dbPath = path.join(__dirname, '/dbfolder');
+const imgPath = path.join(__dirname, '/images');
+
 
 app.use(session({
     secret: "This is an unknown secret."
 }));
 
 app.use(bodyParser.urlencoded());
-app.use(express.static('public'));
 
-app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', hbs({defaultLayout: "main"}));
-app.set('view engine', 'handlebars');
+app.use("/userfiles", express.static(htmlPath));
+app.use("/scripts", express.static(scriptPath));
+app.use("/stylesheets", express.static(cssPath));
+app.use("/dbfolder", express.static(dbPath));
+app.use("/images", express.static(imgPath));
+
+
+/* Home route '/' landing page for all */
+app.get('/', (req, res) => {
+  res.sendfile('index.html');
+});
 
 
 // opens login & new user page
 app.get('/login', (req, res) => {
-  res.render('login', {
-    title: 'Login Page',
-    cssStyle: '.card0{height:100vh}'
-  });
+  if (req.session.loggedIn===true) {
+    redirect('/');
+  } else {
+    res.sendfile('login.html');
+  }
 });
 <<<<<<< HEAD
 app.get('/mywatchlist.html', function(req, res) {
@@ -38,6 +51,7 @@ else {
 }
     
 =======
+
 
 // Authentication Route to verify user login credentials
 app.post('/auth', (req, res) => {
@@ -52,22 +66,12 @@ app.post('/auth', (req, res) => {
 
 /*Checks unauthorsied access to myportfolio & mywatchlist pages*/
 app.use((req, res, next) => {
-    if (req.session.loggedIn != true && (req.originalUrl.indexOf('/myportfolio.html') != -1 || req.originalUrl.indexOf('mywatchlist.html') != -1)) {
+    if (req.session.loggedIn != true && (req.originalUrl.indexOf('myportfolio.html') != -1 || req.originalUrl.indexOf('mywatchlist.html') != -1)) {
         res.redirect('/login');
     }
     next();
 });
 
-
-/* Home route '/' landing page for all */
-app.get('/', (req, res) => {
-  res.render('home', {
-    title: 'Bluemoon Stock Portfolio Dashboard',
-    cssStyle: '.con{height:100vh}.col0{background-color:#fff;height:50vh}.col1{height:100vh}.col2{background-color:#fff}.col3{background-color:#fff;height:50vh}.col4{background-color:#fff;height:50vh}.col5{background-color:#fff;height:50vh}',
-    script: '<script type="text/javascript" src="././livescripapis.js">',
-    jqcdn: '<script  src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>'
-  });
-});
 
 
 // Redirection Route /profile only visible after successful login with a logout link
@@ -84,29 +88,27 @@ app.get('/profile', (req, res) => {
   res.redirect('/portfolio');
 });
 
-
+//Displays user portfolio OR directs to login
 app.get('/portfolio', (req, res) => {
   if (req.session.loggedIn===true) {
-    res.render('myportfolio', {
-      title: 'My Portfolio',
-      cssStyle: '.card0{height:50vh}.card1{height:50vh}',
-      script: '</script><script type="text/javascript"src="../../makenewfolio.js"></script>',
-      jqcdn: '<script  src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>'
-    });
-  } else {
+    res.sendfile('myportfolio.html');
+    }
+  else {
     res.redirect('/login');
   }
 });
 
+//New portfolio will be created by makefolio.js ; this route /makefolio is merely redirected to /portfolio
 app.post('/makefolio', (req, res) => {
-  console.log(req.body.folioname);
   if (req.session.loggedIn===true) {
-    res.render('/myportfolio', {
-      folioname: req.body.folioname,
+    res.redirect('/portfolio', {
     });
-    }
-  }
-);
+  }});
+
+
+  app.get('/marketnews', (req, res) => {
+    res.sendfile('marketnews.html');
+  });
 
 // Logout Route /logout to destroy the session
 app.get('/logout', (req, res) => {
