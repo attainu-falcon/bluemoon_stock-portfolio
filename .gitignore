@@ -2,3 +2,5 @@ node_modules/
 working
 .DS_Store
 views/
+data/
+mockups/

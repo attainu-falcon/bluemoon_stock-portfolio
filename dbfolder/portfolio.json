@@ -1,0 +1,11 @@
+[
+  {
+"user": "mrinal",
+"folioname": "UserPortfolioName",
+"scrips_in_folio" = {
+                "scripbought": "COMPANY_TAG",
+                "bought_at_price": "XX.XX",
+                "how_many": "XXXX"
+                }
+  }
+]

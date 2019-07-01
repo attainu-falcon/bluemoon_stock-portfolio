@@ -69,7 +69,7 @@ function liveFeed () {
 }
 
 
-$(document).ready(liveFeed());
+// $(document).ready(liveFeed());
 $(document).ready(setInterval(liveFeed(), 1800100));
 
 

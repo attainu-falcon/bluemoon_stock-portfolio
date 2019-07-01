@@ -2,7 +2,6 @@
 
 $(document).ready(function(){
   $("#newfolio").click(function() {  //new portfolio button click
-
     var folioheader = '<div class="row"><div class="col"><div class=" card0">';
     folioheader+= '<div class="card-body"><h5 class="card-title">'+$("#newfolioname").val();
     folioheader+= '</h5><p class="card-text"><table class="table table-hover" id="'+$("#newfolioname").val()+'">';
@@ -23,7 +22,7 @@ $(document).ready(function(){
     modalForm += '<span class="input-group-text" id="inputGroup-sizing-default">Quantity</span>';
     modalForm += '</div><input type="number" class="form-control" id="qty" aria-label="Sizing example input" size="4" aria-describedby="inputGroup-sizing-default"></div>';
     modalForm += '</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>';
-    modalForm += '<button type="button" class="btn btn-primary" id="buy">Buy</button></div></div></div></div></div>';
+    modalForm += '<button type="submit" class="btn btn-primary" id="buy">Buy</button></div></div></div></div></div>';
     var buttonID = '#'+'btn'+$("#newfolioname").val();
     console.log(buttonID);
     $('body').append(modalForm);  //append modalForm
@@ -42,7 +41,6 @@ $(document).ready(function(){
             scrip_list += '</select></div>';
             $('.modal-body').append(scrip_list);
             $('#buy').click(function() {   //buy button click
-
               var qty = $('#qty').val();
               console.log(qty);
               var company_tag = $("#inputGroupSelect01").find(":selected").val();
@@ -66,31 +64,39 @@ $(document).ready(function(){
                     console.log(targetValURL);
                     console.log(company);
                     console.log(current_price);
-
                     console.log(qty);
                     console.log(tableID);
-                    var tab_row = '<tr><td>'+company+'</td><td>'+buy_price+'</td><td>'+qty+'</td><td>'+current_price+'</td></tr>';
+                    $.ajax({
+                      url: "/makefolio",
+                      type: "POST",
+                      dataType: "json",
+                      data: {
+                            "user": $("#username").val(),
+                            "folioname": $("#newfolioname").val(),
+                            "scrips_in_folio" : {
+                                                "scripbought": company_tag,
+                                                "bought_at_price": buy_price,
+                                                "home_many": qty
+                                                }
+                            },
+                      success: (userfoliodata) => {
+                        console.log("Updated the Portfolio Database");
+                      }
+                    });
+                    var tab_row = '<tr><td>'+company_tag+'</td><td>'+buy_price+'</td><td>'+qty+'</td><td>'+current_price+'</td></tr>';
                     console.log(tab_row);
                     $('#'+tableID).append(tab_row);
-                  }
-
-                  }
+                  }}});});}});});});
+                  $('body').append('<button type="button" class="btn btn-primary btn-sm" id="portfolioSummary">Portfolio Summary</button>');
+                  $('#portfolioSummary').click(function(){ window.location = '/getsummary';});
+                  $('#qty').val('');
+                  $("#inputGroupSelect01").find(":selected").remove().text();
                   });
 
 
 
-            // $('#inputGroupSelect01').prop('selectedIndex',0);
-            $('#qty').val('');
-            $('#inputGroupSelect01').find('option:selected').remove().end();
 
-            // $('#exampleModal').remove();
-            // $("#inputGroupSelect01").find(":selected").text()= "Select...";
-          });
-        }
-      });
-    });
-  });
-});
+
 
 
 // function liveCMP (arg) {

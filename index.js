@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const mongoClient = require('mongodb').MongoClient;
 const userlist = require('./dbfolder/userlist.json');
 const path = require('path');
 PORT = process.env.PORT||8080;
@@ -12,6 +13,8 @@ const cssPath = path.join(__dirname, '/stylesheets');
 const htmlPath = path.join(__dirname, '/userfiles');
 const dbPath = path.join(__dirname, '/dbfolder');
 const imgPath = path.join(__dirname, '/images');
+
+const dbURL = "mongodb://localhost:27017/";
 
 
 app.use(session({
@@ -26,6 +29,10 @@ app.use("/stylesheets", express.static(cssPath));
 app.use("/dbfolder", express.static(dbPath));
 app.use("/images", express.static(imgPath));
 
+mongoClient.connect(dbURL, function (err, client) {
+  if (err) throw err;
+  db = client.db('portfolio');
+});
 
 /* Home route '/' landing page for all */
 app.get('/', (req, res) => {
@@ -98,13 +105,33 @@ app.get('/portfolio', (req, res) => {
   }
 });
 
-//New portfolio will be created by makefolio.js ; this route /makefolio is merely redirected to /portfolio
-app.post('/makefolio', (req, res) => {
-  if (req.session.loggedIn===true) {
-    res.redirect('/portfolio', {
-    });
-  }});
 
+//New portfolio will be created by makefolio.js ; this route /makefolio is merely redirected to /portfolio
+  app.post('/makefolio', (req, res) => {
+    if (req.session.loggedIn===true) {
+      db.collection('userfolio').insertOne((req.body),(function (err, result) {
+        if (err) {throw err;
+        } db.collection('userfolio').find({}).toArray(function(err, result){
+          if (err) throw err;
+          res.end();
+        });
+    }));
+  } else {
+    res.redirect('/portfolio');
+  }
+});
+
+//opens summary page
+app.get('/getsummary', (req, res) => {
+  res.sendfile('summary.html');
+});
+
+//Gives the list of scrips to script.js to evaluate the summary
+  app.get('/getfolio', (req, res) => {
+    db.collection('userfolio').find({}).toArray(function (err, result) {
+      res.json(result);
+    });
+  });
 
   app.get('/marketnews', (req, res) => {
     res.sendfile('marketnews.html');
