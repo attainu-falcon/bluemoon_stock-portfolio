@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
   var buyprice, profit, grossMargin, currentprice, grossProfit;
   $.ajax({
