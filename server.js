@@ -7,15 +7,14 @@ const session = require('express-session');
 const mongoClient = require('mongodb').MongoClient;
 const userlist = require('./dbfolder/userlist.json');
 const path = require('path');
-//PORT = process.env.PORT||8080;
+PORT = process.env.PORT||8080;
 const scriptPath = path.join(__dirname, '/scripts');
 const cssPath = path.join(__dirname, '/stylesheets');
 const htmlPath = path.join(__dirname, '/userfiles');
 const dbPath = path.join(__dirname, '/dbfolder');
 const imgPath = path.join(__dirname, '/images');
-const dbURL = "mongodb+srv://srvmndl9217:259200Rina@bluemoonstockportfolio-swqay.mongodb.net/test?retryWrites=true&w=majority";
 
-// const dbURL = precess.env.DB_URL || "mongodb://localhost:27017";
+ const dbURL = precess.env.DB_URL || "mongodb://localhost:27017";
 //bbbbb
 var login = require('./login');
 var signup = require('./signup');
@@ -138,7 +137,7 @@ app.get('/logout', function (req, res) {
      req.session.destroy();
      res.redirect('/');
  });
-app.listen(3000);
+app.listen(PORT);
 
 // app.listen(PORT, function ( {
 //   var time = new Date();
