@@ -47,7 +47,7 @@ $(document).ready(function(){
               console.log(company_tag);
               var company = $("#inputGroupSelect01").find(":selected").text();
               console.log(company);
-              var targetValURL = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol="+company_tag+"&apikey=PUQRIVP3LNMBSDKV";
+              var targetValURL = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol="+company_tag+"&apikey=GJIZXXTC75NWNTNM";
               $.ajax({
                 url: targetValURL,
                 datatype: "json",
@@ -76,7 +76,7 @@ $(document).ready(function(){
                             "scrips_in_folio" : {
                                                 "scripbought": company_tag,
                                                 "bought_at_price": buy_price,
-                                                "home_many": qty
+                                                "how_many": qty
                                                 }
                             },
                       success: (userfoliodata) => {
@@ -93,22 +93,17 @@ $(document).ready(function(){
                   $("#inputGroupSelect01").find(":selected").remove().text();
                   });
 
-
-
-
-
-
-
-// function liveCMP (arg) {
-//   var targetValURL = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol="+arg+"&apikey=PUQRIVP3LNMBSDKV";
-//   $.ajax({
-//     url: targetValURL,
-//     dataType: "json",
-//     success: function(targetValURL) {
-//       var buy_price = targetValURL["Global Quote"]["05. Price"];
-//       var current_price = targetValURL["Global Quote"]["05. Price"];
-//       console.log(targetValURL["Global Quote"]["05. Price"]);
-//       $(tableID).append('<tr><td>'+company+'</td><td>'+buy_price+'</td><td>'+qty+'</td><td>'+current_price+'</td></tr>');
-//             }
-//           });
-//         }
+                
+ //function liveCMP (arg) {
+   //var targetValURL = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol="+arg+"&apikey=PUQRIVP3LNMBSDKV";
+   //$.ajax({
+   //  url: targetValURL,
+    // dataType: "json",
+    // success: function(targetValURL) {
+    //   var buy_price = targetValURL["Global Quote"]["05. Price"];
+    //   var current_price = targetValURL["Global Quote"]["05. Price"];
+    //   console.log(targetValURL["Global Quote"]["05. Price"]);
+    //   $(tableID).append('<tr><td>'+company+'</td><td>'+buy_price+'</td><td>'+qty+'</td><td>'+current_price+'</td></tr>');
+     //       }
+     //      });
+    //     }

@@ -48,16 +48,6 @@ app.get('/login', (req, res) => {
     res.sendfile('login.html');
   }
 });
-<<<<<<< HEAD
-app.get('/mywatchlist.html', function(req, res) {
-    if(req.session.login === true) {
-        res.sendfile('./public/mywatchlist.html');
-}
-else {
-    res.send("To access your watchlist, you have to login first!" + "<a href='/login.html'>login</a>")
-}
-    
-=======
 
 
 // Authentication Route to verify user login credentials
@@ -67,7 +57,6 @@ app.post('/auth', (req, res) => {
       req.session.loggedIn = true; }
     }
     res.redirect('/user');
->>>>>>> 41062bc41fe23a696d40272863bb85072f8c01e7
 });
 
 
@@ -109,7 +98,7 @@ app.get('/portfolio', (req, res) => {
 //New portfolio will be created by makefolio.js ; this route /makefolio is merely redirected to /portfolio
   app.post('/makefolio', (req, res) => {
     if (req.session.loggedIn===true) {
-      db.collection('userfolio').insertOne((req.body),(function (err, result) {
+      db.collection('userfolio').update((req.body),(function (err, result) {
         if (err) {throw err;
         } db.collection('userfolio').find({}).toArray(function(err, result){
           if (err) throw err;
